@@ -1,27 +1,16 @@
 package org.silverbreezed.macefaahsfx.sound;
 
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
+import java.util.function.Supplier;
 
 public class ModSounds {
 
     public static final String MOD_ID = "macefaahsfx";
 
-    public static final SoundEvent FAAH_SOUND = registerSoundEvent();
+    // Gunakan ResourceLocation (NMS Vanilla), bukan Identifier (Fabric)
+    public static final Identifier FAAH_ID = Identifier.fromNamespaceAndPath(MOD_ID, "faah");
 
-    private static SoundEvent registerSoundEvent() {
-        Identifier id = Identifier.fromNamespaceAndPath(MOD_ID, "faah");
-
-        return Registry.register(
-                BuiltInRegistries.SOUND_EVENT,
-                id,
-                SoundEvent.createVariableRangeEvent(id)
-        );
-    }
-
-    public static void initialize() {
-        System.out.println("Mendaftarkan Custom Sounds untuk " + MOD_ID);
-    }
+    // Dibungkus di dalam Supplier agar TIDAK mengeksekusi registrasi otomatis saat kelas dimuat
+    public static final Supplier<SoundEvent> FAAH_SOUND = () -> SoundEvent.createVariableRangeEvent(FAAH_ID);
 }

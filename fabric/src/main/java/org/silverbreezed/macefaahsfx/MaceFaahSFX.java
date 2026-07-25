@@ -1,6 +1,9 @@
 package org.silverbreezed.macefaahsfx;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import org.silverbreezed.macefaahsfx.sound.ModSounds;
 
 public class MaceFaahSFX implements ModInitializer {
     
@@ -12,6 +15,7 @@ public class MaceFaahSFX implements ModInitializer {
         // project.
 
         // Use Fabric to bootstrap the Common mod.
+        Registry.register(BuiltInRegistries.SOUND_EVENT, ModSounds.MOD_ID, ModSounds.FAAH_SOUND.get());
         Constants.LOG.info("Hello Fabric world!");
         CommonClass.init();
     }

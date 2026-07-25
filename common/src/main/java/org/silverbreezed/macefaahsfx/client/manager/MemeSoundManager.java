@@ -16,17 +16,20 @@ public class MemeSoundManager {
         if (level == null || Minecraft.getInstance().player == null) return;
 
         ModConfig config = ConfigManager.getConfig();
-
-        if (!config.enabled) {
-            return;
-        }
+        System.out.println(config.enabled);
+//
+//        if (!config.enabled) {
+//            return;
+//        }
 
         level.playLocalSound(
                 pos.x, pos.y, pos.z,
-                ModSounds.FAAH_SOUND,
+                ModSounds.FAAH_SOUND.get(),
                 SoundSource.PLAYERS,
-                config.volume, 1.0f, false
+                1.0f, 1.0f, false
         );
+
+        System.out.println("Successfully play sound for " + ModSounds.MOD_ID);
     }
 
     public static void handleEntityStatus(Entity entity, byte status) {

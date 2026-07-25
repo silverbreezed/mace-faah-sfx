@@ -12,16 +12,14 @@
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
     "license": "${license}",
-    "icon": "${mod_id}.png",
-    "environment": "*",
+    "icon": "assets/macefaahsfx/icon.png",
+    "environment": "client",
     "entrypoints": {
         "main": [
             "org.silverbreezed.macefaahsfx.MaceFaahSFX"
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",

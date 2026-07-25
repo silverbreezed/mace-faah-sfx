@@ -4,7 +4,7 @@
     "sounds": [
       {
         "name": "macefaahsfx:faah",
-        "volume": 1.0,
+        "volume": 5.0,
         "stream": false
       }
     ]
