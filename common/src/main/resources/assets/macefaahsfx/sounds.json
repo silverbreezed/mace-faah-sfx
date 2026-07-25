@@ -1,0 +1,12 @@
+{
+  "faah": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "macefaahsfx:faah",
+        "volume": 1.0,
+        "stream": false
+      }
+    ]
+  }
+}
