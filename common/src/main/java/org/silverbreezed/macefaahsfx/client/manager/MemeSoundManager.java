@@ -35,8 +35,6 @@ public class MemeSoundManager {
     public static void handleEntityStatus(Entity entity, byte status) {
         if (!(entity instanceof LivingEntity livingEntity)) return;
 
-        System.out.println("[MaceFaahSFX]: Status: " + status);
-
         if (SmashTracker.verifyAndConsume(livingEntity)) {
             playFaahSound((ClientLevel) livingEntity.level(), livingEntity.position());
         }
